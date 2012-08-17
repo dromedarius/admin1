@@ -1,25 +1,17 @@
-diff -Nur admin1/.git/config admin2/.git/config
---- admin1/.git/config	2012-08-17 23:57:00.367386445 +0400
-+++ admin2/.git/config	2012-08-16 19:50:36.000000000 +0400
-@@ -5,7 +5,7 @@
- 	logallrefupdates = true
- [remote "origin"]
- 	fetch = +refs/heads/*:refs/remotes/origin/*
--	url = https://github.com/dromedarius/admin1.git
-+	url = https://github.com/kuzmiigo/admin1
- [branch "master"]
- 	remote = origin
- 	merge = refs/heads/master
-Binary files admin1/.git/index and admin2/.git/index differ
-diff -Nur admin1/.git/logs/HEAD admin2/.git/logs/HEAD
---- admin1/.git/logs/HEAD	2012-08-17 23:57:00.366386447 +0400
-+++ admin2/.git/logs/HEAD	2012-08-16 19:50:36.000000000 +0400
-@@ -1 +1 @@
--0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345233420 +0400	clone: from https://github.com/dromedarius/admin1.git
-+0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345132236 +0400	clone: from https://github.com/kuzmiigo/admin1
-diff -Nur admin1/.git/logs/refs/heads/master admin2/.git/logs/refs/heads/master
---- admin1/.git/logs/refs/heads/master	2012-08-17 23:57:00.366386447 +0400
-+++ admin2/.git/logs/refs/heads/master	2012-08-16 19:50:36.000000000 +0400
-@@ -1 +1 @@
--0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345233420 +0400	clone: from https://github.com/dromedarius/admin1.git
-+0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345132236 +0400	clone: from https://github.com/kuzmiigo/admin1
+diff -Nur admin1/info.sh admin2/info.sh
+--- admin1/info.sh      2012-08-18 01:36:08.824952168 +0400
++++ admin2/info.sh      2012-08-18 01:15:54.532924460 +0400
+@@ -19,6 +19,13 @@
+     unzip -l "$1"
+ }
+
++handle_pem()
++{
++FP=`openssl x509 -noout -text -fingerprint -in "$1" | grep -E "SHA1 Fingerprint=" | sed 's/SHA1 Fingerprint=//'`
++SUB=`openssl x509 -noout -text -in "$1" | grep -E "Subject:"| sed 's/Subject://' | sed 's/^[ \t]*//'`
++echo "$FP   $SUB"
++}
++
+
+ #
+ # Main
