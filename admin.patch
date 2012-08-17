@@ -1,0 +1,25 @@
+diff -Nur admin1/.git/config admin2/.git/config
+--- admin1/.git/config	2012-08-17 23:57:00.367386445 +0400
++++ admin2/.git/config	2012-08-16 19:50:36.000000000 +0400
+@@ -5,7 +5,7 @@
+ 	logallrefupdates = true
+ [remote "origin"]
+ 	fetch = +refs/heads/*:refs/remotes/origin/*
+-	url = https://github.com/dromedarius/admin1.git
++	url = https://github.com/kuzmiigo/admin1
+ [branch "master"]
+ 	remote = origin
+ 	merge = refs/heads/master
+Binary files admin1/.git/index and admin2/.git/index differ
+diff -Nur admin1/.git/logs/HEAD admin2/.git/logs/HEAD
+--- admin1/.git/logs/HEAD	2012-08-17 23:57:00.366386447 +0400
++++ admin2/.git/logs/HEAD	2012-08-16 19:50:36.000000000 +0400
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345233420 +0400	clone: from https://github.com/dromedarius/admin1.git
++0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345132236 +0400	clone: from https://github.com/kuzmiigo/admin1
+diff -Nur admin1/.git/logs/refs/heads/master admin2/.git/logs/refs/heads/master
+--- admin1/.git/logs/refs/heads/master	2012-08-17 23:57:00.366386447 +0400
++++ admin2/.git/logs/refs/heads/master	2012-08-16 19:50:36.000000000 +0400
+@@ -1 +1 @@
+-0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345233420 +0400	clone: from https://github.com/dromedarius/admin1.git
++0000000000000000000000000000000000000000 38b6ffcaa42c13386d94f52eb400f9a32c0d47ae root <root@dromedarius.local> 1345132236 +0400	clone: from https://github.com/kuzmiigo/admin1
