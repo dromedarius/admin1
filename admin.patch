@@ -7,9 +7,7 @@ diff -Nur admin1/info.sh admin2/info.sh
 
 +handle_pem()
 +{
-+FP=`openssl x509 -noout -text -fingerprint -in "$1" | grep -E "SHA1 Fingerprint=" | sed 's/SHA1 Fingerprint=//'`
-+SUB=`openssl x509 -noout -text -in "$1" | grep -E "Subject:"| sed 's/Subject://' | sed 's/^[ \t]*//'`
-+echo "$FP   $SUB"
++echo -e ""$(openssl x509 -fingerprint -md5 -noout -in $1 | awk -F "=" '{print $2}')"   "$(openssl x509 -subject -noout -in $1 | awk -F "t=" '{print $2}')""
 +}
 +
 
